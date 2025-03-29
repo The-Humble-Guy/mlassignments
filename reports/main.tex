@@ -1,0 +1,64 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{bmstu-title-new}
+\usepackage[export]{adjustbox}
+\usepackage{pdfpages}
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{4}
+
+\worknumber{1}
+% \variant{3}
+\workname{Дескриптивный анализ данных}
+\discipline{Методы машинного обучения}
+\group{ИУ6-21М}
+\author{А. А. Куценко}
+\tutor[Преподаватель]{С. Ю. Папулин}
+\inspector[Нормоконтролер]{О. Ю. Ерёмин}
+
+\input{src/vars}
+
+\hypersetup{
+    pdftitle={Отчет по ДЗ1 Методы машинного обучения Куценко А ИУ6-21М},
+}
+
+\begin{document}
+
+	\bmstutitlehome
+
+	\includepdf[pages=-]{\notebookpdf}
+
+\end{document}
+
+
+% Примеры того, как вставить картинку, таблицу, листинг
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=0.4\textheigh]{images/r2.png}
+		\caption{\centering Результат рbаботы при достижении правила $R_2$ (после $R_2$ программа сделала попытку поставить диагноз правилами $R_3$ и $R_4$, но ни одно из них не сработало)}
+		\label{fig:r2}
+	\end{figure}
+
+	\begin{table}[H]
+		\caption{Варианты заданий}
+		\label{tab:lab_variant}
+		\begin{tabular}{|p{0.13\textwidth}|p{0.82\textwidth}|}
+			\hline
+			\textbf{Вариант}   & \textbf{Задание} \\ \hline
+			Вариант 3          & \scriptsize Основными симптомами язвы являются стойкие боли.
+			                    Пациент ощущает их долго, в зависимости от своей терпеливости~--- неделю, месяц, полгода.
+			                    Язвенная боль чаще локализуется в подложечной области, на середине расстояния между пупком и концом грудины;
+			                    при язве желудка~--- по средней линии или слева от нее;
+			                    при язве двенадцатиперстной кишки~--- на 1\,--\,2\,см вправо от средней линии.
+
+			                    Для язв, протекающих с чрезмерно высокой кислотностьюю, характерны запоры, нередко с кишечными коликами.
+			                    Наконец, у язвенных больных часто наблюдается чувство внутренней напряженности и повышенная раздражительность. \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{singlespacing}
+		\small
+		\captionsetup{labelsep=endash, justification=raggedright, singlelinecheck=off}
+		\lstinputlisting[label=code:data_base, caption={Содержимое базы фактов предметной области для варианта 3}]{code/dbfile.txt}
+	\end{singlespacing}
+

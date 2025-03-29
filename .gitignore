@@ -1,2 +1,6 @@
 *_debug
 *_checkpoints
+reports/build/*
+reports/src/*
+
+!report/src/.empty

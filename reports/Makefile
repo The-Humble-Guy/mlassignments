@@ -6,7 +6,7 @@ LATEX_CREATE_VARS_SCRIPT := ./scripts/create_vars_latex.sh
 DOCKER_CONTAINTER := ml-student
 SCALE_FACTOR_PERCENT := 55
 
-NOTEBOOK := ../notebooks/A1_IU21_Kutsenko_1_1_3.ipynb
+NOTEBOOK := ../notebooks/A2_IU21_Kutsenko_2_3.ipynb
 NOTEBOOK_BASENAME := $(shell basename $(basename $(NOTEBOOK)))
 NOTEBOOK_FULL_PATH := $(realpath $(NOTEBOOK))
 
@@ -28,7 +28,7 @@ clean:
 	rm -rf $(shell pwd)/$(BUILD_DIR)
 
 view: build/main.pdf
-	xdg-open build/main.pdf
+	evince build/main.pdf
 
 all: convert build view
 

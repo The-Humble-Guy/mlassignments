@@ -15,7 +15,7 @@ CONVERT_PATH := $(shell realpath ./src)
 convert: $(NOTEBOOK_FULL_PATH)
 	$(DOCKER_EXEC_SCRIPT) --container $(DOCKER_CONTAINTER) -cmd "jupyter nbconvert --to html --output-dir=$(CONVERT_PATH) $(NOTEBOOK_FULL_PATH)"
 	echo "<script>document.body.style.zoom = \"$(SCALE_FACTOR_PERCENT)%\";</script>" >> $(CONVERT_PATH)/$(NOTEBOOK_BASENAME).html
-	google-chrome --headless --disable-gpu --print-to-pdf-no-header --run-all-compositor-stages-before-draw --no-margins --print-to-pdf="$(CONVERT_PATH)/$(NOTEBOOK_BASENAME).pdf" "$(CONVERT_PATH)/$(NOTEBOOK_BASENAME).html"
+	google-chrome --headless --print-to-pdf-no-header --virtual-time-budget=5000 --run-all-compositor-stages-before-draw --no-margins --print-to-pdf="$(CONVERT_PATH)/$(NOTEBOOK_BASENAME).pdf" "$(CONVERT_PATH)/$(NOTEBOOK_BASENAME).html"
 
 build:
 	mkdir -p $(BUILD_DIR)
